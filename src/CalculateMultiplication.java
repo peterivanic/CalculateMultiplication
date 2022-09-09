@@ -6,9 +6,9 @@ public class CalculateMultiplication {
         if (isArgumentsCorrect(args)) {
             switch (args[0]) {
                 case "-alg1":
-                    System.out.println(algoWithBigIntegerMultiply(args[1],args[2]));
+                    System.out.println(algoWithBigIntegerMultiply(args[1], args[2]));
                 case "-alg2":
-                    System.out.println(multiplyAlgo(args[1],args[2]));
+                    System.out.println(multiplyAlgo(args[1], args[2]));
             }
         }
     }
@@ -37,7 +37,7 @@ public class CalculateMultiplication {
         return result.toString();
     }
 
-//I found this great solutions with explanation on www.geeksforgeeks.org
+    //I found this great solutions with explanation on www.geeksforgeeks.org
     static String multiplyAlgo(String num1, String num2) {
         int len1 = num1.length();
         int len2 = num2.length();
@@ -144,6 +144,5 @@ public class CalculateMultiplication {
                             
                         """);
     }
-
 
 }
