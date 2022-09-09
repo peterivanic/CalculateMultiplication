@@ -15,7 +15,7 @@ public class CalculateMultiplication {
                 badArgumentMessage();
             }
         } else {
-            System.out.println("Command Line Multiplycation app\n" +
+            System.out.println("Command Line Multiplication app\n" +
                     "=============================");
             System.out.println();
             System.out.println("Command line arguments:");
@@ -28,5 +28,26 @@ public class CalculateMultiplication {
                                 
                             """);
         }
+    }
+    public static boolean isNumeric(String str) {
+        int sum = 0;
+        for (char ch : str.toCharArray())
+            try {
+                Integer.parseInt(String.valueOf(ch));
+                sum++;
+            } catch (NumberFormatException e) {
+                sum--;
+            }
+        return sum == str.length();
+    }
+
+    public static void badArgumentMessage() {
+        System.out.println(
+                """
+                            BAD ARGUMENTS!
+                            
+                            input must be: -alg1/-alg2 first_number second_number
+                            
+                        """);
     }
 }
