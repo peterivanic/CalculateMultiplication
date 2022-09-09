@@ -1,8 +1,43 @@
+import java.math.BigInteger;
+
 public class CalculateMultiplication {
 
     public static void main(String[] args) {
+        if (isArgumentsCorrect(args)) {
+            switch (args[0]) {
+                case "-alg1":
+                    System.out.println(algoWithBigIntegerMultiply(args[1],args[2]));
+                case "-alg2":
 
+            }
+        }
     }
+
+    public static boolean isArgumentsCorrect(String[] args) {
+        if (args.length >= 1) {
+            if (args.length == 3 && isNumeric(args[1]) && isNumeric(args[2])) {
+                if (args[0].equals("-alg1") || args[0].equals("-alg2")) {
+                    return true;
+                } else {
+                    badArgumentMessage();
+                    return false;
+                }
+            } else {
+                badArgumentMessage();
+                return false;
+            }
+        } else {
+            infoMessage();
+            return false;
+        }
+    }
+
+    public static String algoWithBigIntegerMultiply(String a, String b) {
+        BigInteger result = new BigInteger(a).multiply(new BigInteger(b));
+        return result.toString();
+    }
+
+
 
     public static boolean isNumeric(String str) {
         int sum = 0;
@@ -41,22 +76,5 @@ public class CalculateMultiplication {
                         """);
     }
 
-    public static boolean isArgumentsCorrect(String[] args){
-        if (args.length >= 1) {
-            if (args.length == 3 && isNumeric(args[1]) && isNumeric(args[2])) {
-                if (args[1].equals("-alg1") || args[1].equals("-alg2")) {
-                return true;
-                } else {
-                    badArgumentMessage();
-                    return false;
-                }
-            } else {
-                badArgumentMessage();
-                return false;
-            }
-        } else {
-            infoMessage();
-            return false;
-        }
-    }
+
 }
