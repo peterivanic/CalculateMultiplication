@@ -24,7 +24,7 @@ public class CalculateMultiplication {
                                 -alg1 BigIntegers multiply
                                 -alg2 Multiply algorithm
                                 
-                                !input must be: -alg1/-alg2 first_number second_number!
+                                input must be: -alg1/-alg2 first_number second_number
                                 
                             """);
         }
